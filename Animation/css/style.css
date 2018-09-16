@@ -29,7 +29,7 @@
 	font-weight: bold;
 	
 	text-align: left;
-	margin-top: 0;
+	margin-top: 5px;
   padding-left: 85px;
         
   animation-name: change;
@@ -37,9 +37,9 @@
   animation-iteration-count: infinite;
 }
 
-
-
 @keyframes change {
+  99%, 10%, 98% {transform:translate3d(0,-4%,0);}
+  100%, 11%, 99% {transform:translate3d(0,-2%,0);}
   0%, 12%, 100% {transform:translate3d(0,0,0);}
 
   14%, 26% {transform:translate3d(0,-27%,0);}
@@ -62,7 +62,3 @@
   82%, 94% {transform:translate3d(0,-23%,0);}
   83%, 95% {transform:translate3d(0,-25%,0);}
 }
-/*
- 99%, 10%, 98% {transform:translate3d(0,-4%,0);}
-  100%, 11%, 99% {transform:translate3d(0,-2%,0);}
-  0%, 12%, 100% {transform:translate3d(0,0,0);}*/
