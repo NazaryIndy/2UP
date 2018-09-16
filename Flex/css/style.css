@@ -1,0 +1,40 @@
+.container {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: justify;
+	    -ms-flex-pack: justify;
+	        justify-content: space-between; 
+	-webkit-box-orient: vertical; 
+	-webkit-box-direction: normal; 
+	    -ms-flex-flow: column wrap; 
+	        flex-flow: column wrap;	
+    justify-content: space-between;
+
+    height: 1080px;
+    width: 1130px;
+	margin: 20px auto;
+}
+
+.item {
+	background-color: #84cd1b;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center; 
+    -webkit-box-align: center; 
+        -ms-flex-align: center; 
+            align-items: center;
+}
+
+.item_big {
+	width: 545px;
+	height: 530px;
+}
+
+.item_small {
+	width: 545px;
+	height: 255px;
+}
