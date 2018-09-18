@@ -1,0 +1,54 @@
+img {	
+	max-width: auto;
+	height: 100%;
+}
+
+.container {
+  	position: relative;	
+	width: 910px;
+	height: 410px;
+	margin: 20px auto;
+	padding: 20px;
+	background-color: #FFAA00;
+	background-image: repeating-linear-gradient(107deg, #DDDB98, #6E6E6E, #DDDB98 30px);
+}
+
+.kitty, 
+.puppy {
+	position: absolute;
+	width: 510px;
+	height: 410px;
+}
+
+.kitty {
+	shape-outside: polygon(0 0, 100% 0%, 75% 100%, 0% 100%);
+ 	clip-path: polygon(0 0, 100% 0%, 75% 100%, 0% 100%);
+}
+
+.puppy {
+	right: 20px;
+	shape-outside: polygon(25% 0, 100% 0%, 100% 100%, 0 100%);
+  	clip-path: polygon(25% 0, 100% 0%, 100% 100%, 0 100%);
+}
+
+.text {
+	position: absolute;
+	top: 60%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 500px;
+	min-height: 50px;
+	background-color: rgba(255,255,255,0.5);
+}
+
+.text span {	
+	font-family: Arial, sans-serif;
+	font-size: 20px;
+	font-weight: 700;
+	text-transform: uppercase;
+	color: #1F1E1E;
+	padding: 10px 40px;
+}

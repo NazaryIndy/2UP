@@ -1,0 +1,40 @@
+.container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative; 
+  width: 950px;
+  height: 500px;
+  margin: 20px auto;
+  background-color: #0c082b;
+  background-image: url('../img/n46p20.png');
+  background-repeat: no-repeat;
+}
+
+.cat {
+  position: relative;
+  z-index: 5;
+}
+
+.cat-border-top {
+  position: absolute;
+  top: 95px;
+  width: 810px;
+  height: 300px;
+  border-top: 5px solid #fff;
+}
+
+.cat-border {  
+  position: absolute;
+  width: 800px;
+  height: 300px;
+  border: 5px solid #fff;
+  border-top-color: transparent;
+  z-index: 10;
+}

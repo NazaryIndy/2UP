@@ -1,0 +1,98 @@
+.container {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 400px;
+  height: 400px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #000;
+}
+
+.color-radio {
+  position: relative;
+  margin: 25px;
+}
+
+.container-color {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+}
+
+.color-radio + label::before {
+  content: "";
+
+  position: absolute;
+  top: -25px;
+  left: -58px;  
+
+  width: 48px;
+  height: 48px;
+
+  border: 2px solid #fff;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.container label {
+  position: relative;
+}
+
+.color-radio:checked + label::after {
+  content: "";
+
+  position: absolute;
+  top: -19px;
+  left: -52px;
+
+  width: 40px;
+  height: 40px;
+
+  background-color: #fff;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+#color-purple:checked ~ .container-color { 
+  background: -webkit-gradient(linear, left top, right top, color-stop(33.33%, purple), color-stop(33.33%, blue), color-stop(33.33%, green)); 
+  background: -webkit-linear-gradient(left, purple 33.33%, blue 33.33%, green 33.33%); 
+  background: -o-linear-gradient(left, purple 33.33%, blue 33.33%, green 33.33%); 
+  background: linear-gradient(to right, purple 33.33%, blue 33.33%, green 33.33%);
+  background-size: 300% 100%;
+  background-position:left bottom;
+  -webkit-transition: all 2s ease;
+  -o-transition: all 2s ease;
+  transition: all 2s ease;
+}
+
+#color-green:checked ~ .container-color {
+  background: -webkit-gradient(linear, left top, right top, color-stop(33.33%, purple), color-stop(33.33%, blue), color-stop(33.33%, green) );
+  background: -webkit-linear-gradient(left, purple 33.33%, blue 33.33%, green 33.33% );
+  background: -o-linear-gradient(left, purple 33.33%, blue 33.33%, green 33.33% );
+  background: linear-gradient(to right, purple 33.33%, blue 33.33%, green 33.33% );
+  background-size: 300% 100%;
+  background-position: center, right bottom;
+  -webkit-transition: all 2s ease;
+  -o-transition: all 2s ease;
+  transition: all 2s ease;
+}
+
+#color-blue:checked ~ .container-color {  
+  background: -webkit-gradient(linear, right top, left top, color-stop(33.33%, blue), color-stop(33.33%, purple), color-stop(33.33%, green));  
+  background: -webkit-linear-gradient(right, blue 33.33%, purple 33.33%, green 33.33%);  
+  background: -o-linear-gradient(right, blue 33.33%, purple 33.33%, green 33.33%);  
+  background: linear-gradient(to left, blue 33.33%, purple 33.33%, green 33.33%);
+  background-size: 300% 100%;
+  background-position: right bottom;
+  -webkit-transition: all 2s ease;
+  -o-transition: all 2s ease;
+  transition: all 2s ease;
+}
