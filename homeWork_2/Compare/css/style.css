@@ -1,39 +1,52 @@
 img {	
-	max-width: auto;
+	display: block;
 	height: 100%;
+    transform: skew(15deg);    
 }
 
 .container {
-  	position: relative;	
 	width: 910px;
 	height: 410px;
 	margin: 20px auto;
-	padding: 20px;
-	background-color: #FFAA00;
-	background-image: repeating-linear-gradient(107deg, #DDDB98, #6E6E6E, #DDDB98 30px);
+	padding: 30px 25px;
+
+	background-color: #ffaa00;
+	background-image: repeating-linear-gradient(105deg, #DDDB98, #6E6E6E, #DDDB98 30px);
+}
+
+.container-animal {
+    position: relative;
+    width: 910px;
+	height: 410px;
+    background-color: #ffffff;
+    overflow: hidden;
 }
 
 .kitty, 
 .puppy {
 	position: absolute;
-	width: 510px;
+	width: 505px;
 	height: 410px;
+	overflow: hidden;
 }
 
 .kitty {
-	shape-outside: polygon(0 0, 100% 0%, 75% 100%, 0% 100%);
- 	clip-path: polygon(0 0, 100% 0%, 75% 100%, 0% 100%);
+  left: 0;
+  transform: skew(-15deg) translateX(-55px);
 }
 
 .puppy {
-	right: 20px;
-	shape-outside: polygon(25% 0, 100% 0%, 100% 100%, 0 100%);
-  	clip-path: polygon(25% 0, 100% 0%, 100% 100%, 0 100%);
+	right: 0;
+    transform: skew(-15deg) translateX(53px);
+}
+
+.puppy img {
+	transform: skew(15deg) translateX(-55px);
 }
 
 .text {
 	position: absolute;
-	top: 60%;
+	top: 75%;
 	left: 50%;
 	transform: translate(-50%, -50%);
 	display: flex;
@@ -41,7 +54,7 @@ img {
 	align-items: center;
 	width: 500px;
 	min-height: 50px;
-	background-color: rgba(255,255,255,0.5);
+	background-color: rgba(255,255,255,0.8);
 }
 
 .text span {	
