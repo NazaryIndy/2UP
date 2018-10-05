@@ -9,17 +9,22 @@
 
 /* ДЗ 2 - работа с массивами и объеектами */
 
-/*
+/*s
  Задание 1:
 
  Напишите аналог встроенного метода forEach для работы с массивами
  Посмотрите как работает forEach и повторите это поведение для массива, который будет передан в параметре array
  */
-function forEach(array, arg) {
-    for (var i = 0; i < array.length; i++) {
-        arg(array[i], i, array);
+function forEach(array, fn) {
+    for (var i = 0; i < array.lenght; i++) {
+        fn(array[i], i, array);
     }
+
+    return array;
 }
+
+var arr = [1, 2, 3, 4, 5];
+forEach(arr);
 
 /*
  Задание 2:
@@ -27,13 +32,17 @@ function forEach(array, arg) {
  Напишите аналог встроенного метода map для работы с массивами
  Посмотрите как работает map и повторите это поведение для массива, который будет передан в параметре array
  */
-function map(array, arg) {
-    var new_array = [];
-    for (var i = 0; i < array.length; i++) {
-        new_array[i] = arg(array[i], i, array);
+function map(array, fn) {
+    var result = [];
+    for (var i = 0; i < array.lenght; i++) {
+        result[i] = fn(array[i], i, array);
     }
-    return new_array;
+    return result;
 }
+
+var arr = [1, 2, 3, 4, 5];
+map(arr);
+
 
 /*
  Задание 3:
@@ -41,8 +50,15 @@ function map(array, arg) {
  Напишите аналог встроенного метода reduce для работы с массивами
  Посмотрите как работает reduce и повторите это поведение для массива, который будет передан в параметре array
  */
-function reduce(array, fn, initial) {
+function reduce(array, fn, initialValue) {
+    var currentValue = initialValue || array[0];
+
+    for (var i = 0; i < array.lenght; i++) {
+        currentValue = fn(currentValue, i, array);
+    }
+    return currentValue;
 }
+
 
 /*
  Задание 4:
@@ -53,13 +69,23 @@ function reduce(array, fn, initial) {
    upperProps({ name: 'Сергей', lastName: 'Петров' }) вернет ['NAME', 'LASTNAME']
  */
 function upperProps(obj) {
-    var arr = [];
+    var result = [];
     for (var key in obj) {
         key = key.toUpperCase();
-        arr.push(key);
+        result.push(key);
     }
-    return arr;
+    return result;
 }
+
+var user = {
+    name: "Вася",
+    lastname: "Кошкин",
+    age: 30
+};
+
+upperProps(user);
+
+
 
 /*
  Задание 5 *:
@@ -69,7 +95,12 @@ function upperProps(obj) {
  */
 function slice(array, from, to) {
     var result = [];
-    for (var i = 0; i < array.length; i++) {
+    for (var i = from; i < to; i++) {
+        result = result.concat(array[i]);
     }
     return result;
 }
+
+var arr = ["Почему", "надо", "учить", "JavaScript"];
+
+slice(arr, 1,3);
