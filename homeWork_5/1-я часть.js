@@ -50,8 +50,9 @@ function sumWithDefaults(a, b = 100) {
    returnFnResult(() => 'привет') вернет 'привет'
  */
 function returnFnResult(Fn) {
-  return Fn();
+   return(Fn());
 }
+
 
 /*
  Задание 4:
@@ -67,11 +68,10 @@ function returnFnResult(Fn) {
    console.log(f()); // выведет 13
  */
 function returnCounter(x = 0) {
-  return function f() {
-    return ++x
-  }
+   return function Fn() {
+      return ++x;
+   }
 }
-
 
 /*
  Задание 5 *:
@@ -82,13 +82,10 @@ function returnCounter(x = 0) {
  Пример:
    returnArgumentsArray(1, 2, 3) вернет [1, 2, 3]
  */
-function returnArgumentsArray() {
-    var result = [];
-    for (var i = 0; i < arguments.length; i++) {
-        result[i] = arguments[i];
-    }
-    return result;
+function returnArgumentsArray(...theArgs) {
+ return theArgs;
 }
+
 
 /*
  Задание 6 *:
@@ -105,8 +102,9 @@ function returnArgumentsArray() {
 
    console.log(newSum()) выведет 6
  */
-function bindFunction(Fn, a, b) {
-    Fn = Fn.bind(null, a, b);
-    return Fn;
+function bindFunction(Fn, ...theArgs) {
+   return Fn.bind(null, ...theArgs);
+       return Fn;
 }
+
 
