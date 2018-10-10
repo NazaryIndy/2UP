@@ -95,12 +95,28 @@ upperProps(user);
  */
 function slice(array, from, to) {
     var result = [];
+    
+    if (to > array.length) {
+        to = array.length;
+    } 
+    
+    if (from + array.length < 0) {
+        from = -array.length;
+    } 
+    
+    if ( from < 0) {
+        from = from + array.length;
+    } 
+
     for (var i = from; i < to; i++) {
         result = result.concat(array[i]);
     }
+
     return result;
 }
 
 var arr = ["Почему", "надо", "учить", "JavaScript"];
 
-slice(arr, 1,3);
+slice(arr, -2, 3);
+
+arr.slice(-2,3);
