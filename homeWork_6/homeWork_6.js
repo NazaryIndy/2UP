@@ -16,23 +16,18 @@
  */
 function isAllTrue(array, fn) {
     try {
-        if ((array.length <= 0) || (array == 0)) {
+        if ((array.length <= 0) && (array == 0)) {
             throw new Error('empty array');
         } else if (typeof fn != 'function') {
             throw new Error("fn is not a function");
         } else {
-        var x = 0;
-        for (var i = 0; i < array.length; i++) {
-            if (fn(array[i]) == true) {
-                x++;
-            }
+            for (var i = 0; i < array.length; i++) {
+                if (fn(array[i]) == false) {
+                    return false;
+                }
+            } 
         }
-        if (array.length == x) {
-                return true;
-        } else {
-                return false;
-            }
-        }
+        return true;                
 
     } catch (e) {
     console.log(e.message);
@@ -40,9 +35,9 @@ function isAllTrue(array, fn) {
 };
 
 
-isAllTrue([100, 2, 3, 4, 5], n => n < 10);
-isAllTrue([1, 2, 3, 4, 5], n => n < 10);
 
+isAllTrue([1, 2, 3, 4, 5], n => n < 10);
+isAllTrue([100, 2, 3, 4, 5], n => n < 10);
 /*
  Задание 2:
  2.1: Функция принимает массив и фильтрующую фукнцию и должна вернуть true или false
@@ -57,30 +52,25 @@ isAllTrue([1, 2, 3, 4, 5], n => n < 10);
  */
 function isSomeTrue(array, fn) {
     try {
-        if ((array.length <= 0) || (array == 0)) {
+        if ((array.length <= 0) && (array == 0)) {
             throw new Error('empty array');
         } else if (typeof fn != 'function') {
             throw new Error("fn is not a function");
         } else {
-            var x = 0;
             for (var i = 0; i < array.length; i++) {
                 if (fn(array[i]) == true) {
-                    x++;
+                    return true;
                 }
-            }
-            if (x >= 1) {
-                return true;
-            } else {
-                return false;
-            }
+            } 
+            return false;            
         }
 
     } catch (e) {
         console.log(e.message);
     }
 };
-isSomeTrue([1, 2, 3, 4, 5], n => n > 20);
 
+isSomeTrue([1, 2, 3, 4, 5], n => n > 20);
 isSomeTrue([1, 2, 30, 4, 5], n => n > 20);
 
 
@@ -123,12 +113,9 @@ function returnBadArguments(fn) {
    - number не является числом (с текстом "number is not a number")
    - какой-либо из аргументов div является нулем (с текстом "division by 0")
  */
-function calculator(number = 0) {
-    function isNumeric(n) {
-        return !isNaN(parseFloat(n)) && isFinite(n);
-    }
+function calculator(number = 0) {   
     try {
-        if (isNumeric(number) !== true) {
+        if (typeof fn != 'function') {
             throw new Error("number is not a number");
         }
 
