@@ -82,16 +82,18 @@ isSomeTrue([1, 2, 30, 4, 5], n => n > 20);
  3.3: Необходимо выбрасывать исключение в случаях:
    - fn не является функцией (с текстом "fn is not a function")
  */
-function returnBadArguments(fn) {
+function returnBadArguments(fn, ...args) {
     try {
         if (typeof fn != 'function') {
             throw new Error("fn is not a function");
         } else {
             var array = [];
             var x = 0;
-            for (var i = 1; i < arguments.length; i++) {
-                x = fn(arguments[i]);
-                array.push(arguments[i]);
+            for (var i = 1; i < args.length; i++) {
+                if (fn(args[i]) === false) {
+                    array[x] = args[i];
+                    x++;
+                }
             }
         }
         return array;
