@@ -130,6 +130,38 @@ function deleteTextNodesRecursive(where) {
    }
  */
 function collectDOMStat(root) {
+    var rootTags = {};
+    var rootClasses = {};
+    var rootTexts = 0;    
+
+    function getTags (node) {
+        if (node.nodeType === 1) {
+            if (!rootTags[node.tagName]) {
+                rootTags[node.tagName] = 1;
+            } else {
+                rootTags[node.tagName]++;
+            }
+        }
+    };
+
+    function getClasses (node) {
+        if (node.nodeType === 1) {
+            for (var i = 0; i < node.classList.length; i++) {
+                if (!rootClasses[node.classList[i]]) {
+                    rootClasses[node.classList[i]] = 1;
+                } else {
+                    rootClasses[node.classList[i]]++
+                }
+            }
+        }
+    };
+
+    function getTexts (node) {
+        if (node.nodeType === 3) {
+            rootTexts++;
+        }
+    };
+
 }
 
 /*
