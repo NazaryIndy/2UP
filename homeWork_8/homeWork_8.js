@@ -161,6 +161,28 @@ function collectDOMStat(root) {
             rootTexts++;
         }
     };
+ 
+     function getAll(node) {
+        var childs = node.childNodes;
+        childs = Array.prototype.slice.call(childs);
+
+        for (var child of childs) {
+            getTags(child);
+            getClasses(child);
+            getTexts(child);
+            if (child.hasChildNodes()) {
+                getAll(child);
+            }
+        }
+    }
+
+    getAll(root);
+
+    return {
+        tags: rootTags,
+        classes: rootClasses,
+        texts: rootTexts
+    };
 
 }
 
